@@ -13,9 +13,9 @@ __all__ = ['search']
 
 def search(ordered, find):
     '''
-    index = search(ordered)
+    index = search(ordered, find)
     input:
-      ordered: ascending list (see sort.*)
+      ordered: ascending array list (see sort.*)
       find: target item
     output:
       index: index of target item, -1 otherwise
