@@ -2,14 +2,14 @@
 
 '''
 
-Queue with simple implemation(built-in arraylist).
+Queue with simple implementation(built-in arraylist).
 
 class Queue
 '''
 
 class Queue(object):
     '''
-    Queue with simple implemation(built-in arraylist).
+    Queue with simple implementation(built-in arraylist).
     ----------
       Queue(): init queue
       void enqueue(item): add an item
@@ -26,7 +26,7 @@ class Queue(object):
         '''
         enqueue(item)
         input:
-          item: item for enqueue
+          item: item to enqueue
         output:
           None
         '''
