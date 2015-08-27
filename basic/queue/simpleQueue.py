@@ -13,7 +13,8 @@ class Queue(object):
     ----------
       Queue(): init queue
       void enqueue(item): add an item
-      item dequeue(): remove the least recently added item
+      void dequeue(): remove the least recently added item
+      item head(): get the least recently added item
       bool isEmpty(): is queue empty
       int size(): number of items in queue
       void clear(): clear the queue
@@ -35,18 +36,24 @@ class Queue(object):
 
     def dequeue(self):
         '''
-        item = dequeue()
+        dequeue()
+        input/output:
+          None
+        '''
+        if self.isEmpty():
+            return
+        self.array.remove(self.array[0])
+        self.num -= 1
+
+    def head(self):
+        '''
+        item = head()
         input:
           None
         output:
           item: the least recently added item, None if empty
         '''
-        if self.isEmpty():
-            return None
-        item = self.array[0]
-        self.array.remove(item)
-        self.num -= 1
-        return item
+        return self.array[0]
 
     def isEmpty(self):
         '''

@@ -13,7 +13,8 @@ class Stack(object):
     -------------
       Stack(): init queue
       push(item): push an item
-      item = pop(): remove the most recently added item
+      pop(): remove the most recently added item
+      top(): get the most recently added item
       empty = isEmpty(): tell stack is empty
       stackSize = size(): get size of stack 
       clear(): reset the stack
@@ -35,18 +36,13 @@ class Stack(object):
 
     def pop(self):
         '''
-        item = pop(): remove the most recently added item
-        input:
+        pop(): remove the most recently added item
+        input/output:
           None
-        output:
-          item: item for pop, None if stack is empty
         '''
-        if self.isEmpty():
-            return None
-        else:
+        if not self.isEmpty():
             item = self.array.pop()
             self.num -= 1
-            return item
 
     def isEmpty(self):
         '''
