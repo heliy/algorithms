@@ -10,3 +10,11 @@
 -------------
 
 # search
+
+--------------
+
+# arithmetic
+
+### expression
+- [expression evaluation](./arithmetic/expressionEvaluation.py)
+1. Dijkstra's two-stack algorithm for evaluating expression.
