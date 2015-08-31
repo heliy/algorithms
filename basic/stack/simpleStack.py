@@ -31,6 +31,7 @@ class Stack(object):
         output:
           None
         '''
+        # print "push:", item
         self.array.append(item)
         self.num += 1
 
@@ -42,7 +43,19 @@ class Stack(object):
         '''
         if not self.isEmpty():
             item = self.array.pop()
+            # print "pop:", item
             self.num -= 1
+
+    def top(self):
+        '''
+        item = top(): get the most recently added item
+        input:
+          None
+        output:
+          item: the most recentlu added item, None otherwise
+        '''
+        if not self.isEmpty():
+            return self.array[-1]
 
     def isEmpty(self):
         '''
