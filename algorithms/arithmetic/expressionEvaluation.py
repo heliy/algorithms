@@ -9,12 +9,14 @@ def twoStack(): Dijkstra's two-stack algorithm
 
 '''
 
-from arithConstants import Fundametal4, Numbers, OperLevel
-# from basic.stack.simpleStack import Stack as StackClass
+from .arithConstants import Fundametal4, Numbers, OperLevel
+
+from .. import exampleAPI as api
+StackClass = api.EXA_STACK
 
 inNumbers = Numbers.append('.')           # chars which will appear in numbers
 
-def check(expression, Stack):
+def check(expression, Stack=StackClass):
     '''
     Check expression is valid.
 
@@ -25,13 +27,13 @@ def check(expression, Stack):
     isValid = check(expressiong, Stack)
     input:
       expression: string.
-      Stack: Stack calss, see algo.basic.stack.*Stack.
+      Stack: Stack calss, see algo.basic.stack.*Stack, simpleStack defualt.
     output:
       isValid: True for valid, or False otherwise.
     '''
     return True
 
-def twoStack(expression, Stack):
+def twoStack(expression, Stack=StackClass):
     '''
     Dijkstra's two-stack algorithm for evaluating expression.
 
@@ -42,7 +44,7 @@ def twoStack(expression, Stack):
     val = twoStack(expression, Stack)
     input:
       expression: string.
-      Stack: Stack calss, see algo.basic.stack.*Stack.
+      Stack: Stack calss, see algo.basic.stack.*Stack, simpleStack defualt.
     output:
       val: float result, or `None` if expression is unvalid
     '''
