@@ -25,7 +25,7 @@ class Stack(object):
 
     def push(self, item):
         '''
-        void push(item): push an item
+        push an item
         input:
           item: item to push
         output:
@@ -37,7 +37,7 @@ class Stack(object):
 
     def pop(self):
         '''
-        pop(): remove the most recently added item
+        remove the most recently added item
         input/output:
           None
         '''
@@ -48,7 +48,7 @@ class Stack(object):
 
     def top(self):
         '''
-        item = top(): get the most recently added item
+        get the most recently added item
         input:
           None
         output:
@@ -59,7 +59,7 @@ class Stack(object):
 
     def isEmpty(self):
         '''
-        empty = isEmpty(): tell stack is empty
+        tell stack is empty
         input:
           None
         output:
@@ -69,7 +69,7 @@ class Stack(object):
 
     def size(self):
         '''
-        stackSize = size(): get size of stack 
+        get size of stack 
         input:
           None
         output:
@@ -79,7 +79,7 @@ class Stack(object):
 
     def clear(self):
         '''
-        clear(): reset the stack
+        reset the stack
         input/output:
           None
         '''
