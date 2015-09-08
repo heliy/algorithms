@@ -1,5 +1,5 @@
 
-[Algorithms List](../list.md)
+[Algorithms List](../blob/list.md)
 
-For py3
+For py2
 

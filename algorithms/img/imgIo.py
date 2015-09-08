@@ -4,15 +4,16 @@
 Input and output of image file.
 
 ------------
-img2array(): Read image file as numpy array
-
+def img2array(): Read image file as numpy array.
+def array2img(): Write numpy array to image file.
 """
 
-__all__ = ["img2array"]
+__all__ = ["img2array", "array2img"]
 
 
 import matplotlib.image as img
-from imgContents import *
+import numpy as np
+from imgConstants import *
 
 def rgb2gray(rgb):
     return np.dot(rgb[...,:3],[0.299, 0.587, 0.144])
@@ -38,7 +39,7 @@ def img2array(fname, mode=RGB):
     """
     image = img.imread(fname)
     if mode == RGB:
-        if is not isRGB(image):
+        if not isRGB(image):
             raise image+" is not a RGB image file!"
         else:
             return image
@@ -51,3 +52,19 @@ def img2array(fname, mode=RGB):
             raise image+"is not a RGB or Grayscale image file."
     else:
         raise "Unknown image input mode: "+mode+"!"
+
+def array2img(fname, array):
+    """
+    Write numpy array to image file.
+    -----------
+    Input:
+      fname: output file name.
+      array: image numpy array.
+    Output:
+      None
+    -----------
+    TODO: save grayscale image.
+    """
+    img.imsave(fname, array)
+
+
