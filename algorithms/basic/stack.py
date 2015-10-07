@@ -1,13 +1,10 @@
 # coding: UTF-8
 
 '''
-
-Stack with simple implementation(built-in arraylist).
-
-class Stack
+class SimpleStack: Stack with simple implementation(built-in arraylist).
 '''
 
-class Stack(object):
+class SimpleStack(object):
     '''
     Stack with simple implementation(built-in arraylist).
     -------------

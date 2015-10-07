@@ -1,13 +1,10 @@
 # coding: UTF-8
 
 '''
-
-Queue with simple implementation(built-in arraylist).
-
-class Queue
+class SimpleQueue: Queue with simple implementation(built-in arraylist).
 '''
 
-class Queue(object):
+class SimpleQueue(object):
     '''
     Queue with simple implementation(built-in arraylist).
     ----------
