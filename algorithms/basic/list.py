@@ -1,7 +1,7 @@
 # coding: UTF-8
 
 """
-# Node in linked list.
+# Node in list.
 class SingleNode: with single pointer to next node.
 class DoubleNode: with two pointers linked to next and perivous nodes respectively.
 
@@ -28,7 +28,10 @@ class LinkedList(object):
     empty = isEmpty(): tell list is empty.
     addHead(item): insert at the beginning.
     addTail(item): insert at the ending.
-    item = get(index): get item at index(begin in 0).
+    node = get(index): get item at index(begin in 0).
+    index = index(item): get index of that item.
+    item = remove(index): remove the node in index.
+    size = size(): size of list.
     """
     def __init__(self):
         self.list = SingleNode(None)
@@ -60,40 +63,56 @@ class LinkedList(object):
         output: None
         """
         p = self.list
-        while p.next not None:
+        while p.next is not None:
             p = p.next
-        p.next = Node(item)
+        p.next = SingleNode(item)
         self.num += 1
 
     def get(self, index):
         """
-        item = get(index): get item at index(begin in 0).
+        node = get(index): get item at index(begin in 0).
         input:
           index: 0, 1, .., numbers_of_node-1
         output:
-          item: item in node_of_index, None if index is invalid.
+          node: node in node_of_index, None if index is invalid.
         """
         if index < 0 or index >= self.num:
             return None
-        p = this.list
-        for i in range(num):
+        p = self.list.next
+        for i in range(self.num):
             if i == index:
                 return p
             else:
                 p = p.next
 
     def index(self, item):
+        """
+        index_num = index(item): get index of that item.
+        input:
+          item
+        output:
+          index_num: index of item, None if not found.
+        """
         p = self.list.next
         for i in range(0, self.num):
             if p.item == item:
                 return i
+            else:
+                p = p.next
         return None
     
     def remove(self, index):
+        """
+        item = remove(index): remove the node in index.
+        input:
+          index: index of node you want to remove.
+        output:
+          item: item in that index, None if index is invalid.
+        """
         if index < 0 or index >= self.num:
             return None
-        prev, p = this.list, this.list.next
-        for i in range(num):
+        prev, p = self.list, self.list.next
+        for i in range(self.num):
             if i == index:
                 prev.next = p.next
                 self.num -= 1
@@ -103,6 +122,21 @@ class LinkedList(object):
                 p = p.next        
 
     def size(self):
+        """
+        size = size(): size of list.
+        input: None.
+        output:
+          size
+        """
         return self.num
     
-        
+    def __str__(self):
+        if self.isEmpty():
+            return "Empty List."
+        n = self.list.next
+        s = str(n.item)
+        while n.next is not None:
+            n = n.next
+            s += " -> "
+            s += str(n.item)
+        return s
