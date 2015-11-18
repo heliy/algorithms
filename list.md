@@ -1,20 +1,40 @@
-# basic
-- [binary search](./basic/binarySearch.py)
-
-### queue
-- [simple queue](./basic/queue/simpleQueue.py)
-
-### stack
-- [simple stack](./basic/queue/simpleStack.py)
-
--------------
-
-# search
-
---------------
-
 # arithmetic
 
-### expression
-- [expression evaluation](./arithmetic/expressionEvaluation.py)
-1. Dijkstra's two-stack algorithm for evaluating expression.
+## polynomial
+- Horner's rule
+
+
+---------
+
+# machine learning (ml)
+
+## SVM
+- perceptron
+
+---------
+
+# search
+- binary search
+- linear search
+
+----------
+
+# set
+- union find
+- inversion pair
+
+----------
+
+# sort
+- bubble sort
+- insertion sort
+- selection sort
+- merge sort
+
+----------
+
+# tree
+
+## kd-tree
+- (original) kd-tree
+
