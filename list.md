@@ -1,8 +1,16 @@
 # arithmetic
 
+## linear algebra
+- Strassen's algorithm for square matrices
+
 ## polynomial
 - Horner's rule
 
+
+---------
+
+# arrays
+- maximum Subarray
 
 ---------
 
@@ -16,6 +24,10 @@
 # search
 - binary search
 - linear search
+
+----------
+
+# sequence
 
 ----------
 

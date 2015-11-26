@@ -2,7 +2,7 @@
 
 __all__ = [
     'UnionFind',
-    'invertionCp',
+    'invertionPair',
     ]
 
 class UnionFind(object):
@@ -24,7 +24,7 @@ class UnionFind(object):
     def isInSameGroup(self, a, b):
         return self.find(a) == self.find(b)
     
-def inversionCp(aList):
+def inversionPair(aList):
     '''
     Find inverion pair in a list.
     That is the (i, j) pair if i < j, and A[i] > A[j].
