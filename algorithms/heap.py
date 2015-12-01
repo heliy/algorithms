@@ -43,7 +43,7 @@ class Heap(object):
         return i*2+1 if 1 <= i*2+1 <= self.num() else None
 
     def heapify(self, index):
-        if index <= 0:
+        if index <= 0 or index > self.num():
             return
         
         l = self.left(index)
@@ -57,8 +57,47 @@ class Heap(object):
             self.data[index], self.data[m] = self.data[m], self.data[index]
             self.heapify(m)
 
+    def up(self, index):
+        self.heapify(index)
+        while index >= 1:
+            index = self.parent(index)
+            self.heapify(index)
+
+    def add(self, x):
+        self.data.append(x)
+        self.up(self.num())
+
     def build(self):
         for i in range(self.num()//2, 0, -1):
             self.heapify(i)
         
         
+class priorityQueue(object):
+    def __init__(self, isMaxPriority=True):
+        self.isMax = isMaxPriority
+        self.heap = Heap(None, isMaxPriority)
+
+    def top(self):
+        if self.heap.num() > 0:
+            return self.heap.top()
+        else:
+            return None
+
+    def removeTop(self):
+        if self.heap.num() > 1:
+            self.heap.data[1] = self.heap.data.pop()
+            self.heap.heapify(1)
+        else:
+            self.heap.data = [None]
+
+    def updateKey(self, x, k):
+        if (self.isMax and k < 0) or (not self.isMax and k > 0):
+            return None
+        if self.heap.num() >= x > 0:
+            self.heap.data[x] += k
+            self.heap.heapify(x)
+            self.heap.up(x)
+
+    def add(self, x):
+        self.heap.add(x)
+    

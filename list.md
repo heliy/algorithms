@@ -14,6 +14,12 @@
 
 ---------
 
+# heap
+- heap
+- priority queue
+
+---------
+
 # machine learning (ml)
 
 ## SVM
