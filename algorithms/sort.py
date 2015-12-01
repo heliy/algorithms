@@ -6,10 +6,11 @@ __all__ = [
     'insertionSort_recu',
     'selectionSort',
     'mergeSort',
+    'heapSort',
 ]
 
-isLessThan = lambda x, y: x < y
-isMoreThan = lambda x, y: x > y
+from heap import Heap
+from utils import isLessThan, isMoreThan
 
 def bubbleSort(aList, increaseOrder=True):
     '''
@@ -78,7 +79,7 @@ def selectionSort(aList, increaseOrder=True):
     
 def mergeSort(aList, increaseOrder=True):
     '''
-    inplac version of merge sort.
+    inplace version of merge sort.
     return NOTHING.
     -----
     refer to [CLRS]-2.3.1
@@ -110,3 +111,20 @@ def mergeSort(aList, increaseOrder=True):
             iAto += 1
     f = increaseOrder and isLessThan or isMoreThan
     __mergeSort(aList, 0, len(aList)-1, f)
+
+def heapSort(aList, increaseOrder=True):
+    '''
+    heap sort.
+    heap is implemanted in heap.Heap
+    return List.
+    ------
+    refer to [CLRS]-6.4
+    '''
+    heap = Heap(aList, not increaseOrder)
+    newList = []
+    for i in range(heap.num(), 1, -1):
+        heap.data[1], heap.data[i] = heap.data[i], heap.data[1]
+        newList.append(heap.data.pop())
+        heap.heapify(1)
+    newList.append(heap.top())
+    return newList

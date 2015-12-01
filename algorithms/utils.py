@@ -1,5 +1,9 @@
 # coding: UTF-8
 
+isLessThan = lambda x, y: x < y
+isMoreThan = lambda x, y: x > y
+
+
 def getElemMap(list):
     '''
     get a map of elements and index from a list.
