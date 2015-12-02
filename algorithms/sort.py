@@ -7,8 +7,11 @@ __all__ = [
     'selectionSort',
     'mergeSort',
     'heapSort',
+    'quickSort',
 ]
 
+from random import randint
+    
 from heap import Heap
 from utils import isLessThan, isMoreThan
 
@@ -128,3 +131,27 @@ def heapSort(aList, increaseOrder=True):
         heap.heapify(1)
     newList.append(heap.top())
     return newList
+
+def quickSort(aList, increaseOrder=True):
+    '''
+    inplace randomized quick sort.
+    return NOTHING.
+    ------
+    refer to [CLRS]-7.1, 7.3
+    '''
+    f = increaseOrder and isLessThan or isMoreThan
+    def __qsort(aList, p, r):
+        i = randint(p, r)
+        aList[i], aList[r] = aList[r], aList[i]
+        if p < r:
+            x = aList[r]
+            q = p - 1
+            for j in range(p, r):
+                if f(aList[j], x):
+                    q += 1
+                    aList[q], aList[j] = aList[j], aList[q]
+            q += 1
+            aList[q], aList[r] = aList[r], aList[q]
+            __qsort(aList, p, q-1)
+            __qsort(aList, q+1, r)
+    __qsort(aList, 0, len(aList)-1)

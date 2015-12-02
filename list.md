@@ -17,6 +17,7 @@
 # heap
 - heap
 - priority queue
+- d-ary heap
 
 ---------
 
