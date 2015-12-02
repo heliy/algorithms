@@ -1,7 +1,7 @@
 
 <!-- [Algorithms List](../blob/list.md) -->
 
-For py2
+For py3
 ----
 Dependencies:
 1. numpy(>=1.8.2)
