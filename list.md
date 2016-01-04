@@ -49,6 +49,8 @@
 - insertion sort
 - selection sort
 - merge sort
+- heap sort
+- quick sort
 
 ----------
 

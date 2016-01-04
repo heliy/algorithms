@@ -5,6 +5,8 @@ __all__ = [
     'invertionPair',
     ]
 
+import numpy as np
+
 class UnionFind(object):
     def __init__(self, n):
         self.indexes = np.array(range(n))
