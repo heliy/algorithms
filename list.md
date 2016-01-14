@@ -51,6 +51,7 @@
 - merge sort
 - heap sort
 - quick sort
+- counting sort
 
 ----------
 

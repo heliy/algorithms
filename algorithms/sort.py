@@ -11,9 +11,12 @@ __all__ = [
     'quickSort',
 
     # other sort
+    'countingSort',
 ]
 
 from random import randint
+
+import numpy as np
     
 from heap import Heap
 from utils import isLessThan, isMoreThan
@@ -237,4 +240,28 @@ def tail_recursive_quickSort(aList, increaseOrder=True):
                 __sort(aList, q+1, r)
                 r = q-1
     __sort(aList, 0, len(aList)-1)
+    
+
+def countingSort(aList, arange=None):
+    '''
+    counting-sort
+    return a sorted numpy.array
+
+    references
+    ------
+    [CLRS] - 8.2
+    '''
+    
+    if arange is None:
+        arange = np.arange(min(aList), max(aList)+1)
+    C = np.zeros(arange.shape).astype('int')
+    B = np.empty(len(aList))
+    
+    for item in aList:
+        C[arange == item] += 1
+    k = 0
+    for (i, x) in enumerate(C):
+        B[k:k+x] = np.repeat(arange[i], x)
+        k += x
+    return B.astype(aList.dtype)
     
